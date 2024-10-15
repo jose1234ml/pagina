@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi novia Steel y ser mi osita?</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ff4081;
+        }
+
+        .buttons {
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #btnNo {
+            background-color: #f44336;
+        }
+
+        #mensaje {
+            margin-top: 30px;
+            font-size: 2em;
+            color: #ff4081;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Quieres ser mi novia Steel y ser mi osita?</h1>
+
+    <div class="buttons">
+        <button id="btnSi" onclick="respuestaSi()">Sí</button>
+        <button id="btnNo" onmouseover="moverNo()" onclick="respuestaNo()">No</button>
+    </div>
+
+    <p id="mensaje"></p>
+
+    <script>
+        function respuestaSi() {
+            document.getElementById("mensaje").innerText = "¡Te amo Steel! 😍";
+        }
+
+        function respuestaNo() {
+            document.getElementById("mensaje").innerText = "😢 Oh no, estoy triste...";
+        }
+
+        function moverNo() {
+            const btnNo = document.getElementById("btnNo");
+            const randomX = Math.floor(Math.random() * (window.innerWidth - btnNo.clientWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - btnNo.clientHeight));
+
+            btnNo.style.position = "absolute";
+            btnNo.style.left = randomX + "px";
+            btnNo.style.top = randomY + "px";
+        }
+    </script>
+</body>
+</html>
